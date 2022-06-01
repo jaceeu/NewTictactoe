@@ -43,57 +43,57 @@ namespace trial
                 {
                     case 0:
                         combination = DaBoard[0] + DaBoard[4] + DaBoard[8];
-                        result();//winning combination natin
+                        result();//winning combination natin (Diagonal)
                         break;
                     case 1:
                         combination = DaBoard[2] + DaBoard[4] + DaBoard[6];
-                        result();//winning combination natin
+                        result();//winning combination natin (Diagonal)
                         break;
                     case 2:
                         combination = DaBoard[0] + DaBoard[1] + DaBoard[2];
-                        result();//winning combination natin
+                        result();//winning combination natin (Horizontal)
                         break;
                     case 3:
                         combination = DaBoard[3] + DaBoard[4] + DaBoard[5];
-                        result();//winning combination natin
+                        result();//winning combination natin (Horizontal)
                         break;
                     case 4:
                         combination = DaBoard[6] + DaBoard[7] + DaBoard[8];
-                        result();//winning combination natin
+                        result();//winning combination natin (Horizontal)
                         break;
                     case 5:
                         combination = DaBoard[0] + DaBoard[3] + DaBoard[6];
-                        result();//winning combination natin
+                        result();//winning combination natin (Vertical)
                         break;
                     case 6:
                         combination = DaBoard[1] + DaBoard[4] + DaBoard[7];
-                        result();//winning combination natin
+                        result();//winning combination natin (Vertical)
                         break;
                     case 7:
                         combination = DaBoard[2] + DaBoard[5] + DaBoard[8];
-                        result();//winning combination natin
+                        result();//winning combination natin (Vertical)
                         break;
                 }
 
             }
             checkDraw();
         }
-
+        
         public void result()
         {
             if (combination == "OOO")
             {
                 reset();
-                MessageBox.Show("Si 0 ang nanalo sa laro!!!", "may nanalo na mga bes!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Si 0 ang nanalo sa laro!!!", "may nanalo na mga bes!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); //pag si Y ang winner
             }
             else if (combination == ("XXX"))
             {
                 reset();
-                MessageBox.Show("Si X ang nanalo sa laro!!!", "may nanalo na mga bes!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Si X ang nanalo sa laro!!!", "may nanalo na mga bes!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); //pag si X ang winner
             }
         }
 
-        public void reset()   //para sa reset natin hehe
+        public void reset()   
         {
             button1.Text = "";
             button2.Text = "";
@@ -116,7 +116,7 @@ namespace trial
             button8.Enabled = true;
             button9.Enabled = true;
         }
-
+        // pag walang nanalo sa game
         public void checkDraw()
         {
                 int counter =0;
@@ -130,6 +130,7 @@ namespace trial
                 }
             }
         }
+        // para sa mga lalabas sa buttons natin
         private void button1_Click(object sender, EventArgs e)
         {
             currentTurn++;
@@ -213,7 +214,19 @@ namespace trial
 
         private void Form1_Load(object sender, EventArgs e)
         {
+           
+        }
+        // huling part hehe
+        private void button10_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Welcome to the Game!!");
+            MessageBox.Show("Enjoy the Game!!");
+        }
 
+        private void button11_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Wag mag-away sa game");
+            MessageBox.Show("Kung sino manalo kiss ko");
         }
     }
 }
