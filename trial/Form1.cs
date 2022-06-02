@@ -18,9 +18,9 @@ namespace trial
         }
 
         String[] DaBoard = new string[9];
-        int currentTurn = 0;
+        byte currentTurn = 0;
 
-        public String returnSymbol(int turn)
+        public String returnSymbol(byte turn)
         {
             if (turn % 2 == 0)
             {
@@ -36,7 +36,7 @@ namespace trial
 
         public void checkForWinner()
         {
-            for (int i = 0; i < 8; i++)
+            for (byte i = 0; i < 8; i++)
             {
 
                 switch (i)
@@ -119,8 +119,8 @@ namespace trial
         // pag walang nanalo sa game
         public void checkDraw()
         {
-                int counter =0;
-            for (int i = 0; i < DaBoard.Length; i++)
+                byte counter =0;
+            for (byte i = 0; i < DaBoard.Length; i++)
             {
                 if(DaBoard[i] != null) {counter++;}
                 if (counter==9)
